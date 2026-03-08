@@ -1,6 +1,6 @@
 import { useState } from 'react'
-import {InputBox} from './components'
-import useCurrencyInfo from './hooks/useCurrencyInfo'
+import InputBox from './components/InputBox'
+import useCurrencyInfo from './hooks/useCurrencyInfo/'
 
 
 function App() {
@@ -37,7 +37,7 @@ function App() {
           <form
            onSubmit={(e) => {
             e.preventDefault();
-            convert()
+            convert();
             
           }}
       >
@@ -46,7 +46,7 @@ function App() {
                 label="From"
                 amount={amount}
                 currencyOptions={options}
-                onCurrencyChange={(currency) => setAmount(currency)}
+                onCurrencyChange={(currency) => setFrom(currency)}
                 selectCurrency={from}
                 onAmountChange={(amount) => setAmount(amount)}
                 />
@@ -80,7 +80,7 @@ function App() {
             <button type="submit" 
             className="w-full bg-blue-600
              text-white px-4 py-3 rounded-lg">
-              Convert {from.toUpperCase()} to{to.UpperCase()}
+              Convert {from.toUpperCase()} to {to.toUpperCase()}
             </button>
           </form>
         </div>
